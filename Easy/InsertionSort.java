@@ -1,4 +1,4 @@
-// Insertion Sort: Stride and swipe neigbhoring indices
+// Insertion Sort: Stride and swipe neigbhoring indices. Constant Space O(1), Time is O(n*n)
 public static void swap(int[] array, int i, int index){
   int temp = array[i];
   array[i] = array[index];
