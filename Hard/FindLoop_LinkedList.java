@@ -1,5 +1,6 @@
 // Given a Single Linked List which only knows this.value and this.next, find the loop.
-public static LinkedList brute_findLoop(LinkedList head){ // Uses O(n) time and O(n) space
+// INPUT WILL ALWAYS HAVE A LOOP
+public static LinkedList brute_findLoop(LinkedList head){ // Uses O(n) time and O(n) space (38ms runtime)
   ArrayList<LinkedList> arr = new ArrayList<LinkedList>();
   LinkedList temp = head;
   while(temp.next != null){
