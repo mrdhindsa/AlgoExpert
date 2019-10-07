@@ -15,11 +15,11 @@ class Program {
   }  
   
   public static void recursive_invertBinaryTree(BinaryTree tree) { // 86 ms runtime
-		if(tree == null) return;
-		BinaryTree temp = tree.left;
-		tree.left = tree.right;
-		tree.right = temp;
-		invertBinaryTree(tree.left);
-		invertBinaryTree(tree.right);
+    if(tree == null) return;
+    BinaryTree temp = tree.left;
+    tree.left = tree.right;
+    tree.right = temp;
+    invertBinaryTree(tree.left);
+    invertBinaryTree(tree.right);
   }
 }
