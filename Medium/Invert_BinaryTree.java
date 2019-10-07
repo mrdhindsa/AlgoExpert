@@ -14,7 +14,7 @@ class Program {
     }
   }  
   
-  public static void recursive_invertBinaryTree(BinaryTree tree) { // 86 ms runtime
+  public static void recursive_invertBinaryTree(BinaryTree tree) { // 86 ms runtime. O(n) time, O(d) space
     if(tree == null) return;
     BinaryTree temp = tree.left;
     tree.left = tree.right;
