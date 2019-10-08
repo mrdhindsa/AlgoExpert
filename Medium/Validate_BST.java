@@ -27,3 +27,20 @@
   }
 
   // No extra space implementation
+  public static boolean validateBst(BST tree) {
+		Stack<BST> stack = new Stack<BST>(){{
+			push(tree);
+		}};
+		while(stack.empty() == false){
+			BST curr = stack.pop();
+			if(curr.left != null){
+				if(curr.value <= curr.left.value) return false;
+				stack.push(curr.left);
+			}
+			if(curr.right != null){
+				if(curr.value > curr.right.value) return false;
+				stack.push(curr.right);
+			}
+		}
+		return true;
+  }
