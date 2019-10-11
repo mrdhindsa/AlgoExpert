@@ -5,11 +5,12 @@
       int start_index = i, k = 0;
       while(k < array.length){
 	int new_index = start_index + array[start_index];
-	while(new_index < 0 || new_index >= array.length){
+	while(new_index < 0 || new_index >= array.length){ // Ensure new_index is in range
 	  new_index = (new_index < 0) ? new_index + array.length : new_index;
 	  new_index = (new_index >= array.length) ? new_index - array.length : new_index;
 	}
-	if(check.contains(new_index) == false) check.add(new_index);
+	if(check.contains(new_index)) break;
+	check.add(new_index);
 	start_index = new_index;
         k++;
       }
