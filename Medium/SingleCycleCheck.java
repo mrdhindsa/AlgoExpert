@@ -19,3 +19,20 @@
     }
     return false;
   }
+
+// Better Condensed Solution. // O(n) time and O(1) space.
+// My solution 1 could have been O(n) time and O(n) space. First for-loop is unnecessary (not explained well by question statement).
+  public static boolean hasSingleCycle(int[] array){
+    int startIndex = 0, k = 0;
+    while(k < array.length){
+      if(k > 0 && startIndex == 0) return false;
+      startIndex = jump(startIndex, array);
+      k++;
+    }
+    return startIndex == 0;
+  }
+
+  public static int jump(int currIndex, int[] array){
+    int nextIndex = (currIndex + array[currIndex]) % array.length;
+    return nextIndex >= 0 ? nextIndex : array.length + nextIndex;
+  }
