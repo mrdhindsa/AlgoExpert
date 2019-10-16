@@ -1,16 +1,16 @@
 // O(n*2^n) time and space
   public static ArrayList<ArrayList<Integer>> powerset(ArrayList<Integer> array){
-		ArrayList<ArrayList<Integer>> to_return = new ArrayList<ArrayList<Integer>>();
-		to_return.add(new ArrayList<Integer>());
-		for(Integer val : array){
-			int length = to_return.size();
-			for(int i = 0; i < length; i++){
-				ArrayList<Integer> temp = new ArrayList<Integer>(to_return.get(i));
-				temp.add(val);
-				to_return.add(temp);
-			}
-		}
-		return to_return;
+    ArrayList<ArrayList<Integer>> to_return = new ArrayList<ArrayList<Integer>>(); 
+    to_return.add(new ArrayList<Integer>());
+    for(Integer val : array){
+      int length = to_return.size();
+      for(int i = 0; i < length; i++){
+	ArrayList<Integer> temp = new ArrayList<Integer>(to_return.get(i));
+	temp.add(val);
+	to_return.add(temp);
+      }
+    }
+    return to_return;
   }
   
 // Idea: [1,2,3]. Begin by initalizing to_return to [[]] (a list with the empty set)
