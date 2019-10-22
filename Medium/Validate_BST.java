@@ -35,12 +35,12 @@
       BST curr = stack.pop();
       if(curr.left != null){
 	if(curr.value <= curr.left.value) return false;
- 	  stack.push(curr.left);
-	}
+ 	stack.push(curr.left);
+      }
       if(curr.right != null){
 	if(curr.value > curr.right.value) return false;
-	  stack.push(curr.right);
-	}
+	stack.push(curr.right);
       }
-     return true;
-   }
+    }
+    return true;
+  }
