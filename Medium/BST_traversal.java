@@ -16,7 +16,7 @@ public static ArrayList<Integer> inOrderTraverse(BST tree, ArrayList<Integer> ar
   inOrderTraverse(tree.left, array);
   array.add(tree.value);
   inOrderTraverse(tree.right, array);
-  return array; // Unreachable
+  return array; 
 }
 
 public static ArrayList<Integer> preOrderTraverse(BST tree, ArrayList<Integer> array) {
@@ -24,7 +24,7 @@ public static ArrayList<Integer> preOrderTraverse(BST tree, ArrayList<Integer> a
   array.add(tree.value);
   preOrderTraverse(tree.left, array);
   preOrderTraverse(tree.right, array);
-  return array; // Unreachable
+  return array; 
 }
 
 public static ArrayList<Integer> postOrderTraverse(BST tree, ArrayList<Integer> array) {
@@ -32,5 +32,5 @@ public static ArrayList<Integer> postOrderTraverse(BST tree, ArrayList<Integer> 
   postOrderTraverse(tree.left, array);
   postOrderTraverse(tree.right, array);
   array.add(tree.value);
-  return array; // Unreachable
+  return array; 
 }
