@@ -23,7 +23,7 @@ class Program {
     invertBinaryTree(tree.right);
   }
   
-  public static void iterative_invertBinaryTree(BinaryTree tree) { // Using breadth first search. 33 ms runtime. O(n) time, O(n) space
+  public static void iterative_invertBinaryTree(BinaryTree tree) { // Using depth first search. 33 ms runtime. O(n) time, O(n) space
     Stack<BinaryTree> stack = new Stack<BinaryTree>(){{
       add(tree);
     }};
