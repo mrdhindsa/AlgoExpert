@@ -39,4 +39,19 @@ class Program {
       }
     }
   }
+  
+  public static void invertBinaryTree(BinaryTree tree) { // Using breadth first search!
+    Queue<BinaryTree> q = new LinkedList<BinaryTree>(){{
+			add(tree);
+		}};
+		while(q.size() > 0){
+			BinaryTree curr = q.remove(), left = curr.left;
+			curr.left = curr.right;
+			curr.right = left;
+			if(curr.left != null)
+				q.add(curr.left);
+			if(curr.right != null)
+				q.add(curr.right);
+		}
+  }
 }
