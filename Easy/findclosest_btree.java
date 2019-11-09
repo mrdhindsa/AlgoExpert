@@ -26,25 +26,26 @@ public static int findClosestValueInBst(BST tree, int target){
   }
   return closest;
 }
-	// Stack Implementation
-	public static int findClosestValueInBst(BST tree, int target) {
-		Stack<BST> stack = new Stack<BST>(){{
-			push(tree);
-		}};
-		int smallest_diff = Integer.MAX_VALUE, val = 0;
-		while(!stack.empty()){
-			BST curr = stack.pop();
-			if(curr.value == target)
-				return target;
-			int diff = (int) Math.abs(curr.value - target);
-			if(diff < smallest_diff){
-				smallest_diff = diff;
-				val = curr.value;
-			}
-			if(target < curr.value && curr.left != null)
-				stack.push(curr.left);
-			else if(target > curr.value && curr.right != null)
-				stack.push(curr.right);
+
+// Stack Implementation
+public static int findClosestValueInBst(BST tree, int target) {
+	Stack<BST> stack = new Stack<BST>(){{
+		push(tree);
+	}};
+	int smallest_diff = Integer.MAX_VALUE, val = 0;
+	while(!stack.empty()){
+		BST curr = stack.pop();
+		if(curr.value == target)
+			return target;
+		int diff = (int) Math.abs(curr.value - target);
+		if(diff < smallest_diff){
+			smallest_diff = diff;
+			val = curr.value;
 		}
-		return val;
+		if(target < curr.value && curr.left != null)
+			stack.push(curr.left);
+		else if(target > curr.value && curr.right != null)
+			stack.push(curr.right);
 	}
+	return val;
+}
