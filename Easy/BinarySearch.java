@@ -1,4 +1,4 @@
-// O(logn) \\ Iterative binary search 
+// O(logn) \\ Iterative binary search. returns the index of the number (if found)
 public static int binarySearch(int[] array, int target) {
   int left = 0, right = array.length - 1;
   while(left <= right){
